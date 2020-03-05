@@ -3,7 +3,7 @@ import time
 import requests
 import csv
 
-headers = {"Authorization": "Bearer 307450c7939fa297c4c9ad3659316664a5915a93"}
+headers = {"Authorization": "Bearer YOUR KEY HERE"}
 
 print("Iniciando processo")
 def run_query(json, headers):  # Função que executa uma request pela api graphql
