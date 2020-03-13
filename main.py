@@ -3,7 +3,7 @@ import time
 import requests
 import csv
 
-headers = {"Authorization": "Bearer 307450c7939fa297c4c9ad3659316664a5915a93"}
+headers = {"Authorization": "Bearer YOUR KEY HERE "}
 
 print("Iniciando processo")
 def run_query(json, headers):  # Função que executa uma request pela api graphql
@@ -92,12 +92,12 @@ for node in nodes:
         primaryLanguage = "null"
     else:
         primaryLanguage = str(node['primaryLanguage']['name'])
-        # Adicionando dados de cada repositorio
-        repositore.writerow((node['nameWithOwner'], node['createdAt'], str(node['pullRequests']['totalCount']),
-                             str(node['releases']['totalCount']), node['updatedAt'], primaryLanguage,
-                             str(node['closedIssues']['totalCount']), str(node['totalIssues']['totalCount'])))
-        ++num
-        if (num%10)==0:
-            print(".", end = '')
+    # Adicionando dados de cada repositorio
+    repositore.writerow((node['nameWithOwner'], node['createdAt'], str(node['pullRequests']['totalCount']),
+    str(node['releases']['totalCount']), node['updatedAt'], primaryLanguage,
+    str(node['closedIssues']['totalCount']), str(node['totalIssues']['totalCount'])))
+    ++num
+    if (num%10)==0:
+        print(".", end = '')
 print("]\nProcesso concluido")
 file.close()
